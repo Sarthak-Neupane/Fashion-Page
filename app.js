@@ -1,5 +1,3 @@
-const body = document.body;
-
 const div = document.querySelector(".cursor");
 const hero = document.querySelector(".hero");
 const gridImg = document.querySelectorAll(".gridLayer");
