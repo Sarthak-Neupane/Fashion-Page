@@ -1,0 +1,374 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	cursor: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body,
+html {
+	overflow-x: hidden;
+	background-color: rgb(255, 248, 220);
+	z-index: 1;
+}
+
+/* main {
+	visibility: hidden;
+	opacity: 0;
+} */
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.cursor {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	height: 2rem;
+	width: 2rem;
+	border: 2px solid black;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	transition: all 0.1s linear;
+	pointer-events: none;
+}
+
+.hero {
+	height: 100vh;
+	width: 100%;
+}
+
+.grid-container {
+	height: 250vh;
+	width: 100%;
+	overflow: hidden;
+	padding: 5rem;
+	display: flex;
+	align-items: center;
+}
+
+.grid {
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-template-areas:
+		"img1 img1 img2 img2"
+		"img5 img6 img6 img7"
+		"img5 img6 img6 img7"
+		"img10 img10 img12 img12";
+	height: 100%;
+	width: 100%;
+	transform: scale(2.5);
+	transform-origin: 50% 50%;
+}
+
+.gridLayer {
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.gridLayer:hover .about-text {
+	transform: scaleY(1);
+}
+
+.gridBlock > .about-text {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	left: 0;
+	background-image: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.7),
+		rgba(0, 0, 0, 0.2)
+	);
+	color: whitesmoke;
+	font-size: 1rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	padding: 1.3rem;
+	transform: scaleY(0);
+	transform-origin: 50% 100%;
+	transition: transform 0.5s ease-in-out;
+	letter-spacing: 0.5rem;
+}
+
+.gridLayer:nth-child(1) {
+	background-image: url("Images/Fashion/streetwear.jpg");
+	grid-area: img1;
+}
+
+.gridLayer:nth-child(2) {
+	background-image: url("Images/Fashion/casual.jpg");
+	grid-area: img2;
+}
+
+.gridLayer:nth-child(5) {
+	background-image: url("Images/Fashion/punk.jpg");
+	grid-area: img5;
+}
+
+.gridLayer:nth-child(6) {
+	background-image: url("Images/Fashion/sporty.jpg");
+	grid-area: img6;
+}
+
+.gridLayer:nth-child(7) {
+	background-image: url("Images/Fashion/bohemian.jpg");
+	grid-area: img7;
+}
+
+.gridLayer:nth-child(10) {
+	background-image: url("Images/Fashion/grunge.jpg");
+	grid-area: img10;
+}
+
+.gridLayer:nth-child(12) {
+	background-image: url("Images/Fashion/preppy.jpg");
+	grid-area: img12;
+}
+
+.center-one {
+	position: relative;
+}
+
+.center {
+	position: absolute;
+	background-color: cornsilk;
+	height: 50%;
+	font-size: 2.5rem;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transform: scale(1);
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	z-index: 5;
+}
+
+.center > span {
+	display: block;
+	text-align: center;
+}
+
+.imgHover {
+	transform: scale(2);
+	display: grid;
+	place-content: center;
+	color: beige;
+	font-size: 0.5rem;
+	background-color: gray;
+	border: none !important;
+}
+
+.container,
+.container2,
+.container3 {
+	width: 200%;
+	height: 100vh;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	position: relative;
+	margin: 0;
+}
+
+.about,
+.about2,
+.about3 {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	transform: translate(-10%, -10%);
+	font-size: 4rem;
+	color: whitesmoke;
+	letter-spacing: 10px;
+	z-index: 2;
+	opacity: 1;
+	transform: scale(1);
+}
+
+.first {
+	height: 600px;
+	width: 600px;
+	background-color: transparent;
+}
+
+.panel,
+.panel2,
+.panel3 {
+	height: 100vh;
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.panel2 {
+	transform: translateX(-400%);
+}
+
+.red {
+	z-index: 3;
+}
+
+.blue {
+	z-index: 1;
+}
+
+.ten-img {
+	height: 600px;
+	width: 600px;
+	background-size: cover;
+	background-position: top;
+	margin: 0 2rem;
+	position: relative;
+}
+
+.ten-img .about-text {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	left: 0;
+	background-image: linear-gradient(
+		to top,
+		rgba(0, 0, 0, 0.7),
+		rgba(0, 0, 0, 0.2)
+	);
+	color: whitesmoke;
+	font-size: 3rem;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	padding: 1.3rem;
+	transform: scaleY(0);
+	transform-origin: 50% 100%;
+	transition: transform 0.5s ease-in-out;
+	letter-spacing: 0.5rem;
+}
+
+/* .about-text > h1 {
+	border-bottom: 0px solid whitesmoke;
+	transition: border 0.1s ease-in-out 0.5s;
+} */
+
+/* .about-text > h1::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 2%;
+	width: 100%;
+	background-color: red;
+} */
+
+.img1 {
+	background-image: url("Images/Men/spring.jpg");
+}
+
+.img2 {
+	background-image: url("Images/Men/summer.jpg");
+}
+
+.img3 {
+	background-image: url("Images/Men/fall.jpg");
+}
+
+.img4 {
+	background-image: url("Images/Men/winter.jpg");
+}
+.img1:hover .about-text {
+	transform: scaleY(1);
+}
+.img2:hover .about-text {
+	transform: scaleY(1);
+}
+.img3:hover .about-text {
+	transform: scaleY(1);
+}
+.img4:hover .about-text {
+	transform: scaleY(1);
+}
+
+/* .ten-img:hover .about-text > h1 {
+	border-bottom: 5px solid whitesmoke;
+} */
+
+.img5 {
+	background-image: url("Images/Women/female-spring.jpg");
+}
+
+.img6 {
+	background-image: url("Images/Women/female-summer.jpg");
+}
+
+.img7 {
+	background-image: url("Images/Women/female-fall.jpg");
+}
+
+.img8 {
+	background-image: url("Images/Women/female-winter.jpg");
+}
+.img5:hover .about-text {
+	transform: scaleY(1);
+}
+.img6:hover .about-text {
+	transform: scaleY(1);
+}
+.img7:hover .about-text {
+	transform: scaleY(1);
+}
+.img8:hover .about-text {
+	transform: scaleY(1);
+}
+.img9 {
+	background-image: url("Images/Children/children-spring.jpg");
+}
+
+.img10 {
+	background-image: url("Images/Children/children-summer.jpg");
+}
+
+.img11 {
+	background-image: url("Images/Children/children-fall.jpg");
+}
+
+.img12 {
+	background-image: url("Images/Children/children-winter.jpg");
+}
+.img9:hover .about-text {
+	transform: scaleY(1);
+}
+.img10:hover .about-text {
+	transform: scaleY(1);
+}
+.img11:hover .about-text {
+	transform: scaleY(1);
+}
+.img12:hover .about-text {
+	transform: scaleY(1);
+}
+
+.hello {
+	height: 100vh;
+}
